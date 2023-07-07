@@ -1,0 +1,121 @@
+RABBITMQ
+
+Message Queue Nedir ?
+ 
+Yazýlým sistemlerinde iletiþim için kullanýlan bir yapýdýr. Birbirinden baðýmsýz sistemler arasýnda veri alýþveriþi yapmak için kullanýlýr. Message Queue göndrilen mesajlarý kuyrukta saklar ve sonradan bu mesajlarýn iþlenmesini saðlar.
+Kuyruða mesaj gönderene Producer yada Publisher alana da Consumer denir. 
+Mesela bir e-ticart sitesinde sipariþten sonra baþka bir serviste fatura oluþturulmasý denebilir.Mesaj olarak da ürün bilgisi,sipraiþ numarasý, ödeme bilgileri olabilir. Stok güncellemek veya mail atmak da buna örnek verilebilir.
+ 
+
+Message Broker Nedir ?
+
+Ýçerisinde message queue barýndýran ve publisher consumer arasýndaki iletiþimi saðlayan sistemdir.
+
+-RabbitMQ
+-Fafka
+-ActiveMQ
+-NSQ
+-Redis
+
+Neden Kullanmalýyýz ?
+
+- Ölçeklendirilebilirlik
+
+- Sistemi asenkronlaþtýrmak
+
+- Sorumluluklarý baþka uygulamalara aktarmak
+
+---------------------------------------------------------------------------------------
+
+Advanced Message Queuing Protocol (AMQP) 
+
+Publisher -> Publish -> Exchange -> Routes -> Queue -> Consumes -> Consumer
+
+
+RabbitMQ Dockerize
+
+-docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management
+username and password : guest
+
+ 
+RabbitMQ CloudAMQP
+
+Create New Instance -> Configure Plan -> RabbitMQ Manager
+
+---------------------------------------------------------------------------------------
+
+Exchange Nedir ?
+
+Publisher tarafýndan göndrilen mesajlarýn nasýl yönetileceðini ve hangi routlera yönlendirileceðini belirlememiz konusunda kontrol saðlayan yapýdýr
+
+ 
+
+Binding Nedir ?
+
+Exchange ve queue arasýndaki iliþkiye binding denir. Exchange birden fazla queue'ya bind olabilir.
+
+
+Exchange Types
+
+Direct Exchange : Mesajlarýn direkt olarak belirli bir kuyruða gönderilmesini saðlayan exchangedir.Routing keye uygun olan hedef kuyruklara gönderilir. Bunun için mesaj gönderilecek kuyruðun adýný
+routing key olarak belirtmek yeterlidir. Hata mesajlarýnýn iþlendiði senaryolarda kullanýlabilir. Yada e-ticarette sipariþin baþarý durumuna göre ayrý ayrý kuyruklar oluþturup durumu yönetebiliriz.
+
+Fanout Exchange : Mesajlarýn bu exchange bind olan tüm kuyruklara gönderilmesini saðlar. Ayýrt edici bir özelliði yoktur.
+
+Topic Exchange : Routing Keyi kullanýr. Örnek olarak "*green*". Log sistemi senaryolarýnda kullanýlabilir.
+
+Header Exchange : Routing Key yerine headarý kullanýr. Key value þeklinde kullanýlýr.
+
+---------------------------------------------------------------------------------------
+
+.NET & RabbitMQ - Basic Example 
+
+
+Öncelikle RabbitMQ.Client kütüphanesini yüklemeliyiz.
+
+Publisher Ýþlem Sýrasý
+
+1- Baðlantý oluþturma
+2- Baðlantýyý aktifleþtirme ve kanal açma
+3- Queue oluþturma 
+4- Queue'ye mesaj gönderme
+
+Consumer Ýþlem Sýrasý
+ 
+ 1- Baðlantý oluþturma
+2- Baðlantýyý aktifleþtirme ve kanal açma
+3- Queue oluþturma 
+4- Queue'den mesaj okuma
+
+---------------------------------------------------------------------------------------
+
+Geliþmiþ Kuyruk Mimarisi
+
+Round Robin Dispatching : RabbitMQ default olarak tüm consumerlara sýrasýyla mesaj gönderir
+
+Message Acknowledgement : RabbitMQ tüketiciye gönderdiði mesajý baþarýlý bir þekilde iþlensin veya iþlenmesin hemen kuyruktan silinmesi üzere iþaretler.
+Consumerdan onay gelene kadar veriyi silmemeyi temsil eder. Onay geldikten sonra mesaj silinmelidir. Yoksa mesaj birden fazla iþlenebilir ve performans düþüklüðüne
+yol açabilir.  --> autoAck :false   --> channel.BasicAck(e.DeliveryTag,multiple:false);
+
+
+Basic Nack : Bazen consumerlarda istemsiz durumlarýn dýþýnda kendi kontrollerimiz neticesinde mesajlarý iþlememek isteyebilir veya ilgili mesajýn
+iþlenmesini baþarýyla sonuçlandýramayacaðýmýzý anlayabiliriz. Requeue parametresi ile tekrar iþleyebiliriz.
+
+Basic Cancel : Bir kuytuktaki mesajlarýn iþlenmesini reddetme
+
+Basic Reject : Tek bir mesajýn iþlenmesini reddetme
+
+Message Durability : RabbitMQ sunucusu kapanýrsa normal þartlarda tüm kuyruklar ve mesajlar silinecektir.
+Bunun için mesajlarýn kaybolmamasý için kuyruk için declare edilirken durable true olmalýdýr.
+Kanal için ise -> IBasicProperties properties = channel.CreateBasicProperties();  properties.Persistent = true
+-> kanalý publish ederken basicProperties parametresine atamalýyýz.
+
+Durable her iki taraftada ayný olmalý.
+
+Ýletilerin bu þekilde kalýcý olarak iþaretlemek iletinin kaybolmayacaðýnýn garantisini vermez.
+
+Fair Dispatch : Consumerlara ölçekli bir biçimde daðýtmak için kullanýlýr.
+BasicQos metodu ile mesajlarýn iþleme hýzýný ve teslimat sýrasýný belirleyebiliriz.
+prefetchSize -> Bir consumer tarafýndan alýnabilecek en büyük mesaj boyutunu byte cinsinden belirler. 0 sýnýrsýz demektir
+prefetchCount -> Bir consumer tarafýndan ayný anda iþleme alýnabilecek mesaj sayýsýný belirler.
+global -> Bu konfigürasyonlarýn tüm consumerlar mý yoksa çaðrý yapan consumerlar icin mi oldugunu belirler.
