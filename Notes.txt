@@ -119,3 +119,22 @@ BasicQos metodu ile mesajlarýn iþleme hýzýný ve teslimat sýrasýný belirleyebilir
 prefetchSize -> Bir consumer tarafýndan alýnabilecek en büyük mesaj boyutunu byte cinsinden belirler. 0 sýnýrsýz demektir
 prefetchCount -> Bir consumer tarafýndan ayný anda iþleme alýnabilecek mesaj sayýsýný belirler.
 global -> Bu konfigürasyonlarýn tüm consumerlar mý yoksa çaðrý yapan consumerlar icin mi oldugunu belirler.
+
+
+---------------------------------------------------------------------------------------
+
+Mesaj Tasarýmlarý Nelerdir ?
+
+ P2P (Point To Point) : Bir publisher ilgili mesajý direkt bir kuyruða gönderir ve bu mesaj kuyruðu 
+ iþleyen bir consumer tarafýndan tüketilir. Senaryo gereði bir mesajýn bir tüketici tarafýndan
+ iþlenmesi gerekiyorsa bu yaklaþým kullanýlýr.
+
+ Pub Sub Tasarýmý : Publisher bir exchangeye gönderir ve böylece mesaj bu exchangeye bind edilmiþ olan
+ tüm kuyruklara yönlendirilir. Bu tasarým bir mesajýn birçok tüketici tarafýndan iþlenmesi gerektiði durumlarda
+ kullanýþlýdýr.
+
+ Work Queue : Publisher tarafýndan yayýnlanmýþ bir mesajýn birden fazla consumer arasýndan yalnýzca biri tarafýndan
+ tüketilmesi amaçlanmaktadýr. Bu þekilde tüm consumerlar ayný iþ yüküne ve eþit görev daðýlýmýna sahip olacaklardýr.
+
+ Request Response : Publisher bir request yapar gibi kuyruða mesaj gönderir. Ve bu mesajý tüketen consumerdan
+ sonuca dair baþka kuyruktan bir yanýt bekler.
