@@ -154,3 +154,7 @@ Mesaj Tasarýmlarý Nelerdir ?
  -  Message based communication yapan bir transport gatewaydir.
  - Microservis mimarisi gibi daðýtýk sistemlerin oluþturulmasý ve bu sistemlerin kendi aralarýndaki haberleþme sürecinde herhangi bir teknolojiye dair olabilecek baðýmlýlýðý soyutlamak için kullanýlan kütüphanedir.
 
+ Publish ve Send farký : 
+
+ Publish : Event tabanlý nesaj yöntemini ifade eder. Özünde pub sub patternini uygular. Event publish edildiðinde o evente subscribe olan tüm queuelara mesaj iletilecektir.
+ Send : Command tabanlý mesaj iletim yöntemini ifade eder. Hangi kuyruða mesaj iletimi gerçekleþtirilecekse endpoint olarak bildirilmesi gerekir.
