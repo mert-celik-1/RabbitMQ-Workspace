@@ -138,3 +138,19 @@ Mesaj Tasarýmlarý Nelerdir ?
 
  Request Response : Publisher bir request yapar gibi kuyruða mesaj gönderir. Ve bu mesajý tüketen consumerdan
  sonuca dair baþka kuyruktan bir yanýt bekler.
+
+
+ ----------------------------------------------------------------------------------------------------
+
+ Enterprise Service Bus & MassTransit
+
+ ESB ? 
+ - Servisler arasý entegrasyon saðlayan komponentlerin bütünüdür. 
+ - Farklý uygulamalarýn birbirleriyle kolayca iletiþim kurmasýný saðlar
+
+
+ Mass Transit ?
+ - .NET için geliþtirilmiþ olan ESB frameworkudur.
+ -  Message based communication yapan bir transport gatewaydir.
+ - Microservis mimarisi gibi daðýtýk sistemlerin oluþturulmasý ve bu sistemlerin kendi aralarýndaki haberleþme sürecinde herhangi bir teknolojiye dair olabilecek baðýmlýlýðý soyutlamak için kullanýlan kütüphanedir.
+

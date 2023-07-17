@@ -16,27 +16,41 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQ-Consumer-Ex1", "1-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Direct-Exchange-Example", "2-Direct-Exchange-Example", "{A3B95AD2-D2E4-445F-AFD8-FC03E955F06F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Direct-Exchange-Consumer", "2-Direct-Exchange-Example\Direct-Exchange-Consumer\Direct-Exchange-Consumer.csproj", "{D735F286-9FCD-494E-A904-079F2DA232C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Direct-Exchange-Consumer", "2-Direct-Exchange-Example\Direct-Exchange-Consumer\Direct-Exchange-Consumer.csproj", "{D735F286-9FCD-494E-A904-079F2DA232C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Direct-Exchange-Publisher", "2-Direct-Exchange-Example\Direct-Exchange-Publisher\Direct-Exchange-Publisher.csproj", "{110F74E5-F672-4B7B-A2D4-71C2095FE497}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Direct-Exchange-Publisher", "2-Direct-Exchange-Example\Direct-Exchange-Publisher\Direct-Exchange-Publisher.csproj", "{110F74E5-F672-4B7B-A2D4-71C2095FE497}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Fanout-Exchange-Example", "3-Fanout-Exchange-Example", "{E40DC596-3D0F-4E30-B6EC-695C890A0BF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanout-Exchange-Publisher", "3-Fanout-Exchange-Example\Fanout-Exchange-Publisher\Fanout-Exchange-Publisher.csproj", "{142A311E-0DC6-412B-9DCF-722FF09301F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanout-Exchange-Publisher", "3-Fanout-Exchange-Example\Fanout-Exchange-Publisher\Fanout-Exchange-Publisher.csproj", "{142A311E-0DC6-412B-9DCF-722FF09301F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanout-Exchange-Consumer", "3-Fanout-Exchange-Example\Fanout-Exchange-Consumer\Fanout-Exchange-Consumer.csproj", "{18425C2B-F22C-47BE-8808-AC7ECFBF426C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fanout-Exchange-Consumer", "3-Fanout-Exchange-Example\Fanout-Exchange-Consumer\Fanout-Exchange-Consumer.csproj", "{18425C2B-F22C-47BE-8808-AC7ECFBF426C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Topic-Exchange-Example", "4-Topic-Exchange-Example", "{E40ABB21-371E-4228-85D8-50636B549A60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topic-Exchange-Consumer", "4-Topic-Exchange-Example\Topic-Exchange-Consumer\Topic-Exchange-Consumer.csproj", "{600652BB-52F9-41EE-BBD6-F22F213BF5C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topic-Exchange-Consumer", "4-Topic-Exchange-Example\Topic-Exchange-Consumer\Topic-Exchange-Consumer.csproj", "{600652BB-52F9-41EE-BBD6-F22F213BF5C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topic-Exchange-Publisher", "4-Topic-Exchange-Example\Topic-Exchange-Publisher\Topic-Exchange-Publisher.csproj", "{4CBF150D-1A6E-4B12-A87C-977F7015023D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topic-Exchange-Publisher", "4-Topic-Exchange-Example\Topic-Exchange-Publisher\Topic-Exchange-Publisher.csproj", "{4CBF150D-1A6E-4B12-A87C-977F7015023D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Message-Templates-Example", "5-Message-Templates-Example", "{0A0F8596-91C7-4A26-9757-C125BD2C7D8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Message-Templates-Consumer", "5-Message-Templates-Example\Message-Templates-Consumer\Message-Templates-Consumer.csproj", "{CA749F92-21A9-4BF4-9B22-2C73063F4D89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Message-Templates-Consumer", "5-Message-Templates-Example\Message-Templates-Consumer\Message-Templates-Consumer.csproj", "{CA749F92-21A9-4BF4-9B22-2C73063F4D89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Message-Templates-Publisher", "5-Message-Templates-Example\Message-Templates-Publisher\Message-Templates-Publisher.csproj", "{05A076C4-0D1F-4DA6-AF7B-BCF43163876C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Message-Templates-Publisher", "5-Message-Templates-Example\Message-Templates-Publisher\Message-Templates-Publisher.csproj", "{05A076C4-0D1F-4DA6-AF7B-BCF43163876C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6-MassTransit-Example", "6-MassTransit-Example", "{1EA8D5B3-4635-442E-836A-5ABAA4966DB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer", "6-MassTransit-Example\Consumer\Consumer.csproj", "{46F76F31-3E7E-4500-9A47-F62C35D64625}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Producer", "6-MassTransit-Example\Producer\Producer\Producer.csproj", "{7191898F-31D3-49D5-A959-920B98DC9512}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "6-MassTransit-Example\Shared\Shared.csproj", "{1EC31F41-062D-4F42-A4A9-3BA7C559BBDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7-WorkerService-Example", "7-WorkerService-Example", "{38C6AE36-7915-47A6-B945-469524B47094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker-Consumer", "7-WorkerService-Example\Worker-Consumer\Worker-Consumer.csproj", "{96F0DC6A-1D16-4DE0-9ECE-B6C3EE2BA99A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker-Publisher", "7-WorkerService-Example\Worker-Publisher\Worker-Publisher.csproj", "{9A0080EE-DE2A-4A44-BF01-0200368B675B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +98,26 @@ Global
 		{05A076C4-0D1F-4DA6-AF7B-BCF43163876C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05A076C4-0D1F-4DA6-AF7B-BCF43163876C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05A076C4-0D1F-4DA6-AF7B-BCF43163876C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46F76F31-3E7E-4500-9A47-F62C35D64625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46F76F31-3E7E-4500-9A47-F62C35D64625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46F76F31-3E7E-4500-9A47-F62C35D64625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46F76F31-3E7E-4500-9A47-F62C35D64625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7191898F-31D3-49D5-A959-920B98DC9512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7191898F-31D3-49D5-A959-920B98DC9512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7191898F-31D3-49D5-A959-920B98DC9512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7191898F-31D3-49D5-A959-920B98DC9512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EC31F41-062D-4F42-A4A9-3BA7C559BBDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EC31F41-062D-4F42-A4A9-3BA7C559BBDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EC31F41-062D-4F42-A4A9-3BA7C559BBDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EC31F41-062D-4F42-A4A9-3BA7C559BBDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96F0DC6A-1D16-4DE0-9ECE-B6C3EE2BA99A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F0DC6A-1D16-4DE0-9ECE-B6C3EE2BA99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F0DC6A-1D16-4DE0-9ECE-B6C3EE2BA99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F0DC6A-1D16-4DE0-9ECE-B6C3EE2BA99A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A0080EE-DE2A-4A44-BF01-0200368B675B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A0080EE-DE2A-4A44-BF01-0200368B675B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A0080EE-DE2A-4A44-BF01-0200368B675B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A0080EE-DE2A-4A44-BF01-0200368B675B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +133,11 @@ Global
 		{4CBF150D-1A6E-4B12-A87C-977F7015023D} = {E40ABB21-371E-4228-85D8-50636B549A60}
 		{CA749F92-21A9-4BF4-9B22-2C73063F4D89} = {0A0F8596-91C7-4A26-9757-C125BD2C7D8A}
 		{05A076C4-0D1F-4DA6-AF7B-BCF43163876C} = {0A0F8596-91C7-4A26-9757-C125BD2C7D8A}
+		{46F76F31-3E7E-4500-9A47-F62C35D64625} = {1EA8D5B3-4635-442E-836A-5ABAA4966DB0}
+		{7191898F-31D3-49D5-A959-920B98DC9512} = {1EA8D5B3-4635-442E-836A-5ABAA4966DB0}
+		{1EC31F41-062D-4F42-A4A9-3BA7C559BBDF} = {1EA8D5B3-4635-442E-836A-5ABAA4966DB0}
+		{96F0DC6A-1D16-4DE0-9ECE-B6C3EE2BA99A} = {38C6AE36-7915-47A6-B945-469524B47094}
+		{9A0080EE-DE2A-4A44-BF01-0200368B675B} = {38C6AE36-7915-47A6-B945-469524B47094}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5E8BE69-F46E-477D-AD39-934BA6723E59}
